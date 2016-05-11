@@ -1,0 +1,10 @@
+{
+  "name": "cefet-web-geiser",
+  "version": "1.0.0",
+  "description": "cefet-web-geiser",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.4",
+    "hbs": "^4.0.0"
+  }
+}

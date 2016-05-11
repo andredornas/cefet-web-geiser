@@ -18,7 +18,7 @@ app.set('views', __dirname + '/server/views');
 // dica: o handler desta função é bem simples - basta passar para o template
 //       os dados do arquivo data/jogadores.json
 app.get('/', function(request, response) {
-  response.render('full/index')
+  response.render('index')
 });
 // definir rota para página de detalhes de um jogador --> renderizar a view
 // jogador, usando os dados do banco de dados "data/jogadores.json" e
