@@ -38,12 +38,19 @@ app.get('/jogador/:id', function(request, response) {
   var naoJogados = _.where(jogosTodosJogador, { playtime_forever: 0 })
   jogador.qntNJogados = naoJogados.length;
 
-  _.sortBy(jogosTodosJogador, function(jogo){
-      return jogo.playtime_forever;
+  jogosTodosJogador.forEach(function(jogo){
+    jogo.playtimeHours = Math.ceil(jogo.playtime_forever/60);
+  })
+
+  var melhores = _.sortBy(jogosTodosJogador, function(jogo){
+      return -jogo.playtime_forever;
   });
 
+  jogador.principal = _.first(melhores, 1)[0];
+  jogador.top5 = _.first(melhores, 5);
+
   console.log(jogador);
-  //response.render('jogador', jogador);
+  response.render('jogador', {jogador});
 });
 
 // configurar para servir os arquivos estáticos da pasta "client"

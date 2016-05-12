@@ -54,13 +54,13 @@
         <div class="row-fluid">
           <div class="game-detailed-card media">
             <div class="media-left">
-              <img src="{{jogador.principal.img_logo_url}}" class="game-logo">
+              <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{jogador.principal.appid}}/{{jogador.principal.img_logo_url}}.jpg" class="game-logo">
             </div>
             <div class="media-body">
               <h4 class="media-heading">{{jogador.principal.name}}</h4>
               <dl class="dl-horizontal">
-                <dt>Tempo de jogo:</dt><dd>jogador.principal.playtimeHours</dd>
-                <dt>Estatísticas completas:</dt><dd>http://steamcommunity.com/profiles/{{jogador.principal}}/stats/{{jogador.principal.appid}}</dd>
+                <dt>Tempo de jogo:</dt><dd>{{jogador.principal.playtimeHours}}</dd>
+                <dt>Estatísticas completas:</dt><dd>http://steamcommunity.com/profiles/{{jogador.steamid}}/stats/{{jogador.principal.appid}}</dd>
               </dl>
             </div>
           </div>
@@ -76,19 +76,20 @@
         </div>
         <div class="row-fluid">
           <ul class="col-md-12 games-card-list media-list">
+            {{#each jogador.top5}}
             <!-- Primeiro card de jogo -->
             <li class="media game-card">
               <div class="media-left media-middle">
-                <img src="http://media.steampowered.com/steamcommunity/public/images/apps/105600/e3f375e78ada9d2ec7ffa521fe1b0052d1d2bbb5.jpg">
+                <img src="http://media.steampowered.com/steamcommunity/public/images/apps/{{appid}}/{{img_logo_url}}.jpg">
               </div>
               <div class="media-body media-middle">
-                <h4>Terraria</h4>
+                <h4>{{name}}</h4>
               </div>
               <div class="media-right media-middle">
-                <span class="badge">40h</span>
+                <span class="badge">{{playtimeHours}}</span>
               </div>
             </li>
-            <!-- Próximo jogo aqui -->
+            {{/each}}
           </ul>
         </div>
       </div>
