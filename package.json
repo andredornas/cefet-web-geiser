@@ -1,12 +1,14 @@
 {
   "name": "cefet-web-geiser",
   "version": "1.0.0",
-  "description": "cefet-web-geiser",
-  "main": "app.js",
+  "description": "Um cadastrador de jogos",
+  "main": "server/app.js",
   "dependencies": {
     "express": "^4.13.4",
     "hbs": "^4.0.0",
     "nodemon": "^1.9.2",
-    "underscore": "^1.8.3"
+    "underscore": "^1.8.3",
+  "license":"",
+  "repository":"https://github.com/andredornas/cefet-web-geiser.git"
   }
 }
