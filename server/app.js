@@ -49,7 +49,6 @@ app.get('/jogador/:id', function(request, response) {
   jogador.principal = _.first(melhores, 1)[0];
   jogador.top5 = _.first(melhores, 5);
 
-  console.log(jogador);
   response.render('jogador', {jogador});
 });
 
@@ -58,7 +57,7 @@ app.get('/jogador/:id', function(request, response) {
 app.use(express.static('client'));
 // abrir servidor
 // dica: 1-3 linhas de código
-app.set('port', (process.env.PORT || 4000));
+app.set('port', (process.env.PORT || 3000));
 app.listen(app.get('port'), function() {
   console.log('Node app is running on port', app.get('port'));
 });
